@@ -1,0 +1,43 @@
+
+$complementaryColor2: #2A3132;
+$complementaryColor3: rgb(100, 109, 110);
+
+.nameColumn {
+    width:50%;
+}
+.surnameColumn {
+    width:100%;
+}
+.colorColumn {
+    width:100%;
+}
+
+.header {
+    background-color: $complementaryColor2;
+}
+
+td, th {
+    
+    text-align: left;
+    padding: 8px;
+}
+
+tr {
+    background-color: $complementaryColor3;
+}
+
+
+
+.colorInputStyle {
+    padding-left: 0px;
+    border-left-width: 0px;
+    padding-top: 0px;
+    border-top-width: 0px;
+    padding-right: 0px;
+    border-right-width: 0px;
+    padding-bottom: 0px;
+    border-bottom-width: 0px;
+    background-color: #e3bc08;
+    width: 23px;
+    height: 23px;
+}

@@ -1,0 +1,36 @@
+
+
+<div class="flex-container">
+    <div class="labelFontSize margin-on-the-sides">
+      {{ viewDate | calendarDate:(view + 'ViewTitle'):locale }}
+    </div>
+  
+    <div class="flex-container margin-on-the-sides">
+        <button class="btn btn-brown"
+                mwlCalendarPreviousView
+                [view]="view"
+                [(viewDate)]="viewDate"
+                (viewDateChange)="viewDateChange.next(viewDate)">&#8656;</button>
+        <button class="btn btn-brown"
+                mwlCalendarToday
+                [(viewDate)]="viewDate"
+                (viewDateChange)="viewDateChange.next(viewDate)">Current Date</button>
+        <button class="btn btn-brown"
+                mwlCalendarNextView
+                [view]="view"
+                [(viewDate)]="viewDate"
+                (viewDateChange)="viewDateChange.next(viewDate)">&#8658;</button>
+    </div>
+
+    <div class="flex-container margin-on-the-sides">
+        <button class="btn btn-brown" 
+                [class.active]="view ==='month'"
+                (click)="viewChange.emit('month')">Month</button>
+        <button class="btn btn-brown" 
+                [class.active]="view ==='week'"
+                (click)="viewChange.emit('week')">Week</button>
+        <button class="btn btn-brown" 
+                [class.active]="view ==='day'"
+                (click)="viewChange.emit('day')">Day</button>
+    </div>
+</div>

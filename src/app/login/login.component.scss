@@ -1,0 +1,22 @@
+
+
+$bacground:#336B87;
+
+%margins {
+    margin-top: 6%;
+}
+
+%paddings {
+    padding: 10px 10px 10px 10px;
+}
+
+.centerContainer {
+    @extend %margins;
+    @extend %paddings;
+    background-color: $bacground;
+    position: relative;
+    float: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

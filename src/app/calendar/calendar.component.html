@@ -1,0 +1,49 @@
+
+<div class="mainPageContainer">
+      <div>
+            <div class="baseContainer2">
+                <app-calendar-header [(view)]="view" [(viewDate)]="viewDate"></app-calendar-header>
+            </div>
+
+
+            <div class="baseContainer4">
+                <div [ngSwitch]="view">
+                    <mwl-calendar-month-view
+                      *ngSwitchCase="'month'"
+                      [viewDate]="viewDate"
+                      [events]="events"
+                      [activeDayIsOpen]="true"
+                      [refresh]="refresh"
+                      (eventTimesChanged)="eventTimesChanged($event)">
+                    </mwl-calendar-month-view>
+                    <mwl-calendar-week-view
+                      *ngSwitchCase="'week'"
+                      [viewDate]="viewDate"
+                      [events]="events"
+                      [refresh]="refresh"
+                      (eventTimesChanged)="eventTimesChanged($event)">
+                    </mwl-calendar-week-view>
+                    <mwl-calendar-day-view
+                      *ngSwitchCase="'day'"
+                      [viewDate]="viewDate"
+                      [events]="events"
+                      [refresh]="refresh"
+                      (eventTimesChanged)="eventTimesChanged($event)">
+                    </mwl-calendar-day-view>
+                </div>
+            </div>
+
+
+            <div class="baseContainer2">
+                <button class="btn btn-brown" (click)="toggleDateEntry()">Add new Entry</button>
+            </div>
+
+            <div *ngIf="showNewDateEntry" class="baseContainer2">
+                    <app-date-entry></app-date-entry>
+            </div>
+      </div>
+
+      <div class="usersContainer">
+            <app-user-list></app-user-list>
+      </div>
+</div>

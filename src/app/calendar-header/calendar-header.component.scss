@@ -1,0 +1,17 @@
+
+
+$bacground:#90AFC5;
+$complementaryColor4: #794437;
+
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.margin-on-the-sides {
+    margin-right: 46px;
+}
+
+.active {
+    background-color: darken($complementaryColor4,8%);
+}

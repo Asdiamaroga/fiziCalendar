@@ -1,1 +1,114 @@
 /* You can add global styles to this file, and also import other style files */
+
+$bacground:#90AFC5;
+$complementaryColor1: #336B87;
+$complementaryColor2: #2A3132;
+$complementaryColor3: #763626;
+$complementaryColor4: #794437;
+$fontColor: rgb(243, 239, 239);
+
+body {
+    background-color: $bacground;
+    color: $fontColor;
+}
+
+%paddingTopBottom {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+%containerMargins {
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.spacingContainer{
+    @extend %containerMargins;
+}
+
+.baseContainer {
+    @extend %containerMargins;
+    background-color: $complementaryColor1;
+}
+
+.baseContainer2 {
+    @extend %containerMargins;
+    @extend %paddingTopBottom;
+    background-color: $complementaryColor1;
+}
+
+.baseContainer3 {
+    @extend %containerMargins;
+    @extend %paddingTopBottom;
+    margin-top: 10px;
+    background-color: $complementaryColor2;
+}
+
+.baseContainer4 {
+    @extend %containerMargins;
+    @extend %paddingTopBottom;
+    margin-top: 10px;
+    background-color: $complementaryColor2;
+}
+
+.usersContainer {
+    background-color: $complementaryColor4;
+}
+
+h1 {
+    color: $fontColor;
+}
+
+.mainPageContainer {
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+
+
+@mixin button-bg($bg) {
+    background: $bg;
+    &:hover {
+      background:darken($bg,8%);
+      transition: all 0.3s ease;
+    }
+    &:active {
+      background:darken($bg,25%);
+    } 
+  }
+
+
+.btn{
+    color:$fontColor;
+    padding: 4px 4px 4px 4px;
+    border-bottom: 0px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px; 
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.labelFontSize {
+    font-size: 1.6em !important;
+}
+
+.btn-brown{
+    @include button-bg( $complementaryColor4 );
+}
+
+.btn-black{
+    @include button-bg( $complementaryColor2 );
+}
+
+.cal-month-view .cal-day-cell.cal-weekend .cal-day-number {
+    color: #dd7979 !important;
+}
+
+.cal-month-view .cal-day-number{
+    color: $bacground !important; 
+}
